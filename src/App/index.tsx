@@ -1,9 +1,12 @@
 import BannerBar from '../BannerBar';
+import TabBar from '../TabBar';
+import './index.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <BannerBar />
+      <TabBar />
     </div>
   );
 }
