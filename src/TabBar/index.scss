@@ -1,8 +1,52 @@
 .tab-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 56px;
-  font-size: 18px;
-  color: #fff;
+
+  &-list,
+  &-panel__title {
+    color: #fff;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 56px;
+    font-size: 18px;
+
+    &__item {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        opacity: 0;
+        background-color: #fff;
+        transition: opacity .3s;
+      }
+      &.active {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-panel {
+    padding: 0 20px;
+
+    &+& {
+      margin-top: 20px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
 }
