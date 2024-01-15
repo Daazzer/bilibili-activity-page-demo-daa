@@ -54,7 +54,7 @@ export default function TabBar(props: P) {
     props.onScroll(isFixed);
 
     const tabBarPanel = (tabBarPanelRefs as any).findLast((item: HTMLElement) => {
-      const { top } = item.getBoundingClientRect() || {};
+      const { top } = item?.getBoundingClientRect() || {};
       return top <= 67;
     });
 
