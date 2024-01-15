@@ -1,5 +1,6 @@
 import BannerBar from '../BannerBar';
 import TabBar from '../TabBar';
+import NewsList from '../NewsList';
 import './index.scss';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="app">
       <BannerBar />
       <TabBar />
+      <NewsList />
     </div>
   );
 }

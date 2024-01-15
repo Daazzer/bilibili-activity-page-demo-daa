@@ -1,0 +1,15 @@
+.news-list {
+  padding-bottom: 30px;
+
+  &__item {
+
+    .header-img,
+    .content-img {
+      width: 100%;
+    }
+
+    .header-img {
+      margin-block: 20px;
+    }
+  }
+}
