@@ -6,6 +6,10 @@ import movieImg from '../assets/movie.png';
 import lifeImg from '../assets/life.jpg';
 import './index.scss';
 
+type P = {
+  onScroll: (isFixed: boolean) => void
+};
+
 type Tab = {
   label: string;
   key: string;
@@ -35,7 +39,7 @@ const tabs: Tab[] = [
   }
 ];
 
-export default function TabBar() {
+export default function TabBar(props: P) {
   const [activeTab, setActiveTab] = useState<string>(tabs[0].key);
   const [isFixed, setIsFixed] = useState(false);
   const tabBarRef = useRef<HTMLDivElement>(null);
@@ -47,6 +51,7 @@ export default function TabBar() {
     const tabBarTop = tabBarRect.top;
     const isFixed = tabBarTop <= 0;
     setIsFixed(isFixed);
+    props.onScroll(isFixed);
 
     const tabBarPanel = (tabBarPanelRefs as any).findLast((item: HTMLElement) => {
       const { top } = item.getBoundingClientRect() || {};
@@ -61,7 +66,6 @@ export default function TabBar() {
   };
 
   const onTabBarListItemClick = (key: string) => {
-    setActiveTab(key);
     const tabBarPanel = (tabBarPanelRefs as HTMLElement[]).find((item: HTMLElement) => item.dataset.key === key);
     if (tabBarPanel) {
       tabBarPanel.scrollIntoView({ behavior: 'smooth' });
