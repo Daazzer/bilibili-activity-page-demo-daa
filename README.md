@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# bilibili 活动页
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 练手项目，原教程地址 https://www.bilibili.com/video/BV1yW4y1H7JZ
 
 ## Available Scripts
 
